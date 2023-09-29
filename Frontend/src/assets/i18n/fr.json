@@ -1,0 +1,22 @@
+{
+    "ProjectName": "Gestion Des Informations De Projet",
+    "Help": "Aider",
+    "LogOut": "Déconnecter",
+    "ProjectsList": "Liste des projets",
+    "New": "Nouvelle",
+    "Project": "Projet",
+    "Customer": "Cliente",
+    "Supplier": "Fournisseuse",
+    "SearchButton": "Rechercher",
+    "ResetButton": "Réinitialiser",
+    "ColumnNumber": "Numéro",
+    "ColumnName": "Nom",
+    "ColumnStatus": "Statut",
+    "ColumnCustomer": "Cliente",
+    "ColumnStartDate": "Date de début",
+    "ColumnDelete": "Effacer",
+    "SearchPlaceholder": "Numéro de projet, nom, nom du client",
+    "StatusPlaceholder": "Sélectionnez un statut",
+    "SelectItems": "éléments sélectionnés",
+    "DeleteItems": "supprimer les éléments sélectionnés"
+}

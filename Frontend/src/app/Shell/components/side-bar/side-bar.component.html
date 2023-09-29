@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="mt-4 pl-5">
+        <ul class="nav flex-column ml-5 pb-3">
+            <li id="container-header" class="nav-item">
+                <a class="nav-link font-lg font-segoe-ui-semibold se" routerLink="/project/list" >{{'ProjectsList' | translate}}</a>
+            </li>
+        </ul>
+        <ul class="nav flex-column ml-5">
+            <li id="container-header" class="nav-item">
+                <a class="nav-link se" routerLink="/project/new">{{'New' | translate}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link se" routerLink="/project/list">{{'Project' | translate}}</a>
+                <a class="nav-link se">{{'Customer' | translate}}</a>
+                <a class="nav-link se">{{'Supplier' | translate}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-10 outlet">
+        <div>
+            <h4 class="">{{selection | translate}}</h4>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+:host {
+    #titleContent {
+        text-align: left;
+        margin: 20px;
+        width: 100%;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+.help {
+    width: 50px;
+}
+
+.logout {
+    width: 100px;
+}
+
+.en:focus {
+    color: #2F85FA;
+}
+
+.text-primary {
+    color: #2F85FA;
+}
+
+.nav-link {
+    font-family:'Segoe UI', sans-serif;
+    font-size: 14pt;
+    color: #666666;
+}

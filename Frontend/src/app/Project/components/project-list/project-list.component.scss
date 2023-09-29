@@ -1,0 +1,88 @@
+.table {
+    border: 2px solid #cacaca;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.table thead {
+    border: 2px solid #cacaca !important;
+    line-height: 2px;
+}
+
+.table thead th,
+.table td {
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 1px solid #cacaca !important;
+    border-left: 1px solid #cacaca !important;
+}
+
+.table tfoot {
+    border-top: 2px solid #cacaca !important;
+    background-color: #f5f9ff;
+}
+
+.table tfoot td {
+    border: 0 !important;
+}
+
+th[sortable] {
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    height: 15px;
+    width: 15px;
+    opacity: 0.5;
+}
+
+.btn-delete,
+.btn-delete-multi {
+    cursor: pointer;
+}
+
+#container-header {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18pt;
+    color: #2F85FA;
+}
+
+.table td {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14pt;
+    color: #666666;
+    height: 32px;
+}
+
+.table th {
+    font-family: "Segoe UI Light", Arial, sans-serif;
+    font-size: 14pt;
+    color: #666666;
+    height: 32px;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+#btn-delete{
+    color: #DC143C;
+}

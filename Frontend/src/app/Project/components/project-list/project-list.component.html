@@ -1,0 +1,89 @@
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+<div id="container-header" class="container-fluid pb-0">
+    <div class="mb-3 text-secondary font-lg font-segoe-ui-semibold">{{'ProjectsList' | translate}}</div>
+</div>
+
+<div class="container-fluid pt-2 pb-4 border-top">
+    <form (ngSubmit)="onSubmit()" class="row form-group px-0 my-3 d-flex align-items-center" #searchForm="ngForm">
+        <input class="form-control col-lg-4 mr-lg-4 mb-3 mb-lg-0" name="keySearch" [(ngModel)]="keySearch"
+            placeholder="{{'SearchPlaceholder' | translate}}" autofocus>
+
+        <select required class="form-control col-lg-2 mr-lg-5 mb-3 mb-lg-0" (change)="changeStatus($event)">
+            <option value="" disabled selected>{{ 'StatusPlaceholder' | translate}}</option>
+            <option *ngFor="let status of statusList" class="text-dark" [ngValue]="status.id">{{status.description}}
+            </option>
+        </select>
+        <button type="submit" class="btn btn-primary col-lg-2 mb-3 mb-lg-0">{{'SearchButton' | translate}}</button>
+        <button type="reset" class="btn text-primary col-lg-2 mb-3 mb-lg-0 text-nowrap"
+            (click)="searchForm.reset(); resetForm()">{{'ResetButton' | translate}}</button>
+    </form>
+</div>
+
+<table class="table bg-white table-responsive-md table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th class="text-secondary text-center" sortable="projectNumber" (click)="null">{{'ColumnNumber' |
+                translate}}</th>
+            <th class="text-secondary text-center" sortable="name" (click)="null">{{'ColumnName' | translate }}</th>
+            <th class="text-secondary text-center" sortable="status" (click)="null">{{'ColumnStatus' | translate }}</th>
+            <th class="text-secondary text-center" sortable="customer" (click)="null">{{'ColumnCustomer' | translate }}
+            </th>
+            <th class="text-secondary text-nowrap text-center" sortable="startDate" (click)="null">{{'ColumnStartDate' |
+                translate }}</th>
+            <th class="text-secondary text-center" sortable="delete" (click)="null">{{'ColumnDelete' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projectsList$ | async">
+            <td class="w-5 align-middle text-center">
+                <input type="checkbox" class="checkbox-custom" [disabled]="project.Status != 'New'"
+                    (change)="selectProject($event, project)">
+            </td>
+            <td class="w-5 align-middle text-right">
+                <a>{{ project.ProjectNumber }}</a>
+            </td>
+            <td class="w-35 align-middle">
+                {{ project.Name }}
+            </td>
+            <td class="w-15 align-middle">
+                {{ project.Status }}
+            </td>
+            <td class="w-20 align-middle">
+                {{ project.Customer }}
+            </td>
+            <td class="w-10 align-middle">
+                {{ project.StartDate | date: 'dd.MM.yyyy' }}
+            </td>
+            <td class="w-10 align-middle text-center">
+                <div class="btn-delete-multi text-danger" *ngIf="project.Status == 'New'" (click)="onDeleteSelectedProjects()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot *ngIf="selectedProjectsList.length > 0">
+        <tr class="border-top">
+            <td colspan="7">
+                <div class="d-flex justify-content-between">
+                    <div class="text-primary">
+                        {{selectedProjectsList.length}} items selected
+                    </div>
+                    <div class="btn-delete-multi text-danger" style="padding-right: 19px"
+                        (click)="onDeleteSelectedProjects()">
+                        {{ 'DeleteItems' | translate}}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,22 @@
+{
+    "ProjectName": "Project Information Management",
+    "Help": "Help",
+    "LogOut": "Log out",
+    "ProjectsList": "Projects list",
+    "New": "New",
+    "Project": "Project",
+    "Customer": "Customer",
+    "Supplier": "Supplier",
+    "SearchButton": "Search Project",
+    "ResetButton": "Reset Search",
+    "ColumnNumber": "Number",
+    "ColumnName": "Name",
+    "ColumnStatus": "Status",
+    "ColumnCustomer": "Customer",
+    "ColumnStartDate": "Start Date",
+    "ColumnDelete": "Delete",
+    "SearchPlaceholder": "Project number, name, customer name",
+    "StatusPlaceholder": "Project Status",
+    "SelectItems": "items selected",
+    "DeleteItems": "delete selected items"
+}
